@@ -1,4 +1,4 @@
-package com.company.tests;
+package navy;
 
 import com.company.construction.*;
 import com.company.maintance.Navy;
@@ -57,11 +57,6 @@ class NavyTest {
 
     @Test
     public void getAllPlanes_ALLOY() {
-        Navy boeing = new Navy("F/A-18E/F Super Hornet", "McDonnell Douglas", "In service", "US$66.0 million", Material.ALLOY, 1915);
-        Navy boeing2 = new Navy("E-6 Mercury","Boeing", "In service", "US$141.7 million",Material.ALLOY, 980);
-        Navy boeing3 = new Navy("EA-18G Growler","Boeing", "In service", "US$68.2 million",Material.ALLOY, 1900);
-        Navy boeing4 = new Navy("P-8 Poseidon","Boeing", "In service", "US$256.5 million",Material.ALLOY, 907);
-
         List<Navy> expected = Navy.getAllPlanes(Material.ALLOY);
 
         List<Navy> actual = new ArrayList<>();

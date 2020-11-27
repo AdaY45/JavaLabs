@@ -11,6 +11,8 @@ public class Worker extends PlaneBuilding {
 
     public static void main(String[] args) {
         Worker engineer = new Worker();
-
+        System.out.println(engineer.aeronauticalEngineer);
+        System.out.println(engineer.mechanicalEngineer);
+        System.out.println(engineer.draftingEngineer);
     }
 }

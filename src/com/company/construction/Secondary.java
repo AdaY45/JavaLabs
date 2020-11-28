@@ -1,8 +1,8 @@
 package com.company.construction;
 
 public class Secondary extends FlightControlSurfaces{
-    private String trimTabs;
-    private String springTabs;
+    private final String trimTabs;
+    private final String springTabs;
     Primary primarySurface;
 
     public Secondary(String name, String trimTabs, String springTabs,Primary primary) {

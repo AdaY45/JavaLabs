@@ -1,9 +1,9 @@
 package com.company.construction;
 
 public class Auxiliary extends FlightControlSurfaces{
-    private String spoilers;
-    private String speedBrakes;
-    private String slats;
+    private final String spoilers;
+    private final String speedBrakes;
+    private final String slats;
     Wing firstWing;
     Wing secondWing;
     Fuselage fuselage;

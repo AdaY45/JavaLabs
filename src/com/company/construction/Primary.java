@@ -1,13 +1,13 @@
 package com.company.construction;
 
 public class Primary extends FlightControlSurfaces{
-    private String ailerons;
-    private String elevators;
-    private String rudders;
-    private Wing leftWing;
-    private Wing rightWing;
-    private Stabilizer firstStabilizer;
-    private Stabilizer secondStabilizer;
+    private final String ailerons;
+    private final String elevators;
+    private final String rudders;
+    private final Wing leftWing;
+    private final Wing rightWing;
+    private final Stabilizer firstStabilizer;
+    private final Stabilizer secondStabilizer;
     private String action;
 
     public Primary(String name, String ailerons, String elevators, String rudders,Wing leftWing,Wing rightWing,Stabilizer first,Stabilizer second) {
@@ -36,11 +36,11 @@ public class Primary extends FlightControlSurfaces{
     }
 
     public void addStabilizer(Stabilizer s) {
-        if(s.getType() == "horizontal") {
+        if(s.getType().equals("horizontal")) {
             s.addElement(elevators);
             action = "lateral control";
             actionPrint(action);
-        } else if(s.getType() == "vertical"){
+        } else if(s.getType().equals("vertical")){
             s.addElement(rudders);
             action = "directional control";
             actionPrint(action);
@@ -55,5 +55,6 @@ public class Primary extends FlightControlSurfaces{
     public void Info() {
         System.out.println("\n" + getGroup() + " group is being constructed: \n");
         construct();
+        System.out.println("\n" + getGroup() + " group has been successfully constructed: \n");
     }
 }

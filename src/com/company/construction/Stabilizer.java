@@ -14,7 +14,7 @@ public class Stabilizer implements Construction{
     @Override
     public String construction() {
         if(type == "vertical") {
-            stability = "directional";
+            stability = "directionalсмрис";
             axis = type;
         } else {
             stability = "longitudinal";

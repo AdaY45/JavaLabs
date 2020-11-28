@@ -4,10 +4,10 @@ import com.company.PlaneBuilding;
 
 public class Worker extends PlaneBuilding {
     private final String aeronauticalEngineer = "Mark Roseman";
-    private String mechanicalEngineer = "Calvin Hibs";
-    private String draftingEngineer = "Kevin Baker";
-    private String operationsTechnician = "Alicia Tatcha";
-    private String AircraftEquipmentMechanic = "Haryam Reyez";
+    private final String mechanicalEngineer = "Calvin Hibs";
+    private final String draftingEngineer = "Kevin Baker";
+    private final String operationsTechnician = "Alicia Tatcha";
+    private final String AircraftEquipmentMechanic = "Haryam Reyez";
 
     public String getAeronauticalEngineer() {
         return aeronauticalEngineer;

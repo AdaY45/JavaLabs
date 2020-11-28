@@ -25,7 +25,7 @@ public class Stabilizer implements Construction{
 
     @Override
     public void Info() {
-        System.out.println("\nStabilizer: " + construction());
+        System.out.println("\nStabilizerxgg: " + construction());
     }
 
     public String[] stabilizerInfo() {

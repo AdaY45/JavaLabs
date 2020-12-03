@@ -112,6 +112,32 @@ public class Navy extends Plane{
         return count;
     }
 
+    public static int searchAndCount(List<Navy> planes) {
+        List<Navy> boeings = planes.stream()
+                .filter(plane -> "Boeing".equals(plane.getManufacturer()))
+                .collect(Collectors.toList());
+
+        Predicate<Integer> isBigger = s -> s > 950;
+
+        return boeings.stream()
+                .reduce(0,(p1,p2) ->{
+                            if(isBigger.test(p2.getSpeed()))
+                                return p1+p2.getSpeed();
+                            else
+                                return p1+0;
+                        },
+                        (p1,p2)->p1+p2);
+    }
+
+    public static String maxSpeed (List<Navy> planes) {
+        return planes.stream()
+                .max(Comparator.comparingInt(Plane::getSpeed)).get().getModel();
+    }
+
+    public static Double averageSpeed (List<Navy> planes) {
+        return planes.stream()
+                .mapToInt(p -> p.getSpeed()).average().getAsDouble();
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -152,29 +178,10 @@ public class Navy extends Plane{
         planes.add(new Navy("P-3 Orion","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 761));
         planes.add(new Navy("P-8 Poseidon","Boeing", "In service", "US$256.5 million",Material.ALLOY, 907));
 
-        List<Navy> boeings = planes.stream()
-                .filter(plane -> "Boeing".equals(plane.getManufacturer()))
-                .collect(Collectors.toList());
 
-        Predicate<Integer> isBigger = s -> s > 950;
-
-        int totalSpeed = boeings.stream()
-                        .reduce(0,(p1,p2) ->{
-                            if(isBigger.test(p2.getSpeed()))
-                                return p1+p2.getSpeed();
-                            else
-                                return p1+0;
-                        },
-                                (p1,p2)->p1+p2);
-        System.out.println("Total speed: "+ totalSpeed);
-
-        String maxSpeedModel = planes.stream()
-                .max(Comparator.comparingInt(Plane::getSpeed)).get().getModel();
-        System.out.println("Model with the highest speed: "+ maxSpeedModel);
-
-        Double averageSpeed = planes.stream()
-                .mapToInt(p -> p.getSpeed()).average().getAsDouble();
-        System.out.println("Average speed: "+ averageSpeed);
+        System.out.println("Total speed: "+ searchAndCount(planes));
+        System.out.println("Model with the highest speed: "+ maxSpeed(planes));
+        System.out.println("Average speed: "+ averageSpeed(planes));
 
 //        boeing.AircraftConstruction();
 //        grumman.AircraftConstruction();

@@ -3,6 +3,7 @@ package com.company.maintance;
 import com.company.construction.*;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Navy extends Plane{
 
@@ -111,18 +112,19 @@ public class Navy extends Plane{
     }
 
 
-    public boolean equals(Navy obj) {
+    @Override
+    public boolean equals(Object obj) {
         if (obj == this) return true;
         if (obj == null || obj.getClass() != this.getClass()) {
             return false;
         }
-        //Navy other = (Navy) obj;
-        return getSpeed() == obj.getSpeed() &&
-                Objects.equals(getModel(), obj.getModel()) &&
-                Objects.equals(getManufacturer(), obj.getManufacturer()) &&
-                Objects.equals(getCost(), obj.getCost()) &&
-                Objects.equals(getStatus(), obj.getStatus()) &&
-                Objects.equals(getMaterial(), obj.getMaterial());
+        Navy other = (Navy) obj;
+        return getSpeed() == other.getSpeed() &&
+                Objects.equals(getModel(), other.getModel()) &&
+                Objects.equals(getManufacturer(), other.getManufacturer()) &&
+                Objects.equals(getCost(), other.getCost()) &&
+                Objects.equals(getStatus(), other.getStatus()) &&
+                Objects.equals(getMaterial(), other.getMaterial());
     }
 
     @Override
@@ -131,22 +133,46 @@ public class Navy extends Plane{
     }
 
     public static void main(String[] args) {
-        Navy boeing = new Navy("F/A-18E/F Super Hornet", "McDonnell Douglas", "In service", "US$66.0 million", Material.ALLOY, 1915);
-        Navy grumman = new Navy("E-2 Hawkeye","Northrop Grumman", "In service", "US$176 million", Material.ALUMINUM, 650);
-        Navy boeing2 = new Navy("E-6 Mercury","Boeing", "In service", "US$141.7 million",Material.ALLOY, 980);
-        Navy lockheed = new Navy("EP-3","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 700);
-        Navy boeing3 = new Navy("EA-18G Growler","Boeing", "In service", "US$68.2 million",Material.ALLOY, 1900);
-        Navy lockheed1 = new Navy("P-3 Orion","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 761);
-        Navy boeing4 = new Navy("P-8 Poseidon","Boeing", "In service", "US$256.5 million",Material.ALLOY, 907);
+//        Navy boeing = new Navy("F/A-18E/F Super Hornet", "McDonnell Douglas", "In service", "US$66.0 million", Material.ALLOY, 1915);
+//        Navy grumman = new Navy("E-2 Hawkeye","Northrop Grumman", "In service", "US$176 million", Material.ALUMINUM, 650);
+//        Navy boeing2 = new Navy("E-6 Mercury","Boeing", "In service", "US$141.7 million",Material.ALLOY, 980);
+//        Navy lockheed = new Navy("EP-3","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 700);
+//        Navy boeing3 = new Navy("EA-18G Growler","Boeing", "In service", "US$68.2 million",Material.ALLOY, 1900);
+//        Navy lockheed1 = new Navy("P-3 Orion","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 761);
+//        Navy boeing4 = new Navy("P-8 Poseidon","Boeing", "In service", "US$256.5 million",Material.ALLOY, 907);
 
 
-        boeing.AircraftConstruction();
-        grumman.AircraftConstruction();
-        boeing2.AircraftConstruction();
-        lockheed.AircraftConstruction();
-        boeing3.AircraftConstruction();
-        lockheed1.AircraftConstruction();
-        boeing4.AircraftConstruction();
+        List<Navy> planes = new ArrayList<>();
+        planes.add(new Navy("F/A-18E/F Super Hornet", "McDonnell Douglas", "In service", "US$66.0 million", Material.ALLOY, 1915));
+        planes.add(new Navy("E-2 Hawkeye","Northrop Grumman", "In service", "US$176 million", Material.ALUMINUM, 650));
+        planes.add(new Navy("E-6 Mercury","Boeing", "In service", "US$141.7 million",Material.ALLOY, 980));
+        planes.add(new Navy("EP-3","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 700));
+        planes.add(new Navy("EA-18G Growler","Boeing", "In service", "US$68.2 million",Material.ALLOY, 1900));
+        planes.add(new Navy("P-3 Orion","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 761));
+        planes.add(new Navy("P-8 Poseidon","Boeing", "In service", "US$256.5 million",Material.ALLOY, 907));
+
+        List<Navy> boeings = planes.stream()
+                .filter(plane -> "Boeing".equals(plane.getManufacturer()))
+                .collect(Collectors.toList());
+        int speed = boeings.stream()
+                        .reduce(0,(p1,p2) ->{
+                            if(p2.getSpeed()>950)
+                                return p1+p2.getSpeed();
+                            else
+                                return p1+0;
+                        },
+                                (p1,p2)->p1+p2);
+        System.out.println("Total speed: "+ speed);
+
+
+
+//        boeing.AircraftConstruction();
+//        grumman.AircraftConstruction();
+//        boeing2.AircraftConstruction();
+//        lockheed.AircraftConstruction();
+//        boeing3.AircraftConstruction();
+//        lockheed1.AircraftConstruction();
+//        boeing4.AircraftConstruction();
 //        try {
 //            boeing.AircraftConstruction();
 //        } catch (ConstructionIsNotFinishedException e) {
@@ -156,7 +182,7 @@ public class Navy extends Plane{
 //            System.out.println("Finally!");
 //        }
 //
-        System.out.println(boeing.equals(new ArrayList<>()));
+        //System.out.println(boeing.equals(new ArrayList<>()));
 //
 //        ArrayList<String> models = new ArrayList<>(Arrays.asList(boeing.getModel(),boeing1.getModel(),grumman.getModel(),boeing2.getModel(),
 //                lockheed.getModel(),boeing3.getModel(),lockheed1.getModel(),boeing4.getModel()));

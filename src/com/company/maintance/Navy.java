@@ -3,6 +3,7 @@ package com.company.maintance;
 import com.company.construction.*;
 
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Navy extends Plane{
@@ -154,20 +155,26 @@ public class Navy extends Plane{
         List<Navy> boeings = planes.stream()
                 .filter(plane -> "Boeing".equals(plane.getManufacturer()))
                 .collect(Collectors.toList());
-        int speed = boeings.stream()
+
+        Predicate<Integer> isBigger = s -> s > 950;
+
+        int totalSpeed = boeings.stream()
                         .reduce(0,(p1,p2) ->{
-                            if(p2.getSpeed()>950)
+                            if(isBigger.test(p2.getSpeed()))
                                 return p1+p2.getSpeed();
                             else
                                 return p1+0;
                         },
                                 (p1,p2)->p1+p2);
-        System.out.println("Total speed: "+ speed);
+        System.out.println("Total speed: "+ totalSpeed);
 
-        String maxSpeed = planes.stream()
+        String maxSpeedModel = planes.stream()
                 .max(Comparator.comparingInt(Plane::getSpeed)).get().getModel();
-        System.out.println("Model with the highest speed: "+ maxSpeed);
+        System.out.println("Model with the highest speed: "+ maxSpeedModel);
 
+        Double averageSpeed = planes.stream()
+                .mapToInt(p -> p.getSpeed()).average().getAsDouble();
+        System.out.println("Average speed: "+ averageSpeed);
 
 //        boeing.AircraftConstruction();
 //        grumman.AircraftConstruction();

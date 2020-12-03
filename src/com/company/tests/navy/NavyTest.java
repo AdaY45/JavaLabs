@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -21,6 +22,7 @@ class NavyTest {
     private Navy boeing3;
     private Navy lockheed1;
     private Navy boeing4;
+    List<Navy> planes = new ArrayList<>();
 
     @BeforeEach
     public void setUp() throws Exception {
@@ -31,6 +33,13 @@ class NavyTest {
         boeing3 = new Navy("EA-18G Growler","Boeing", "In service", "US$68.2 million",Material.ALLOY, 1900);
         lockheed1 = new Navy("P-3 Orion","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 761);
         boeing4 = new Navy("P-8 Poseidon","Boeing", "In service", "US$256.5 million",Material.ALLOY, 907);
+        planes.add(new Navy("F/A-18E/F Super Hornet", "McDonnell Douglas", "In service", "US$66.0 million", Material.ALLOY, 1915));
+        planes.add(new Navy("E-2 Hawkeye","Northrop Grumman", "In service", "US$176 million", Material.ALUMINUM, 650));
+        planes.add(new Navy("E-6 Mercury","Boeing", "In service", "US$141.7 million",Material.ALLOY, 980));
+        planes.add(new Navy("EP-3","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 700));
+        planes.add(new Navy("EA-18G Growler","Boeing", "In service", "US$68.2 million",Material.ALLOY, 1900));
+        planes.add(new Navy("P-3 Orion","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 761));
+        planes.add(new Navy("P-8 Poseidon","Boeing", "In service", "US$256.5 million",Material.ALLOY, 907));
     }
 
     @Test
@@ -313,6 +322,33 @@ class NavyTest {
         int expected = Navy.getAllSpeedPlanes(Material.REINFORCED_PLASTIC);
 
         int actual = 0;
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void searchAndCount() {
+        int expected = Navy.searchAndCount(planes);
+
+        int actual = 2880;
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void maxSpeed() {
+        String expected = Navy.maxSpeed(planes);
+
+        String actual = "F/A-18E/F Super Hornet";
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void averageSpeed() {
+        Double expected = Navy.averageSpeed(planes);
+
+        Double actual = 1116.142857142857;
 
         Assert.assertEquals(expected,actual);
     }

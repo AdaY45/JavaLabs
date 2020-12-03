@@ -164,6 +164,9 @@ public class Navy extends Plane{
                                 (p1,p2)->p1+p2);
         System.out.println("Total speed: "+ speed);
 
+        String maxSpeed = planes.stream()
+                .max(Comparator.comparingInt(Plane::getSpeed)).get().getModel();
+        System.out.println("Model with the highest speed: "+ maxSpeed);
 
 
 //        boeing.AircraftConstruction();

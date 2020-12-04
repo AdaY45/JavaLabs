@@ -10,6 +10,7 @@ public class Navy extends Plane{
 
     private int id;
     public static Map<Integer, Navy> allPlanes = new HashMap<>();
+    public static List<Company> construction = new ArrayList<>();
     private static int countId = 0;
 
     public Navy(String model, String manufacturer, String status, String cost, Material material,int speed) {
@@ -147,6 +148,17 @@ public class Navy extends Plane{
         map.forEach((material,p) -> System.out.format("%s: %s\n", material,p));
     }
 
+    public static String allTrustedCompanies(List<Navy> planes) {
+        return planes.stream()
+                .map(p -> p.getConstruction())
+                .flatMap(comp -> comp.stream())
+                .max(Comparator.comparingInt(Company::getTrustIndex)).get().getName();
+    }
+
+    private List<Company> getConstruction() {
+        return construction;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == this) return true;
@@ -191,6 +203,14 @@ public class Navy extends Plane{
         System.out.println("Model with the highest speed: "+ maxSpeed(planes));
         System.out.println("Average speed: "+ averageSpeed(planes));
         mapOfPlanes(planes);
+
+        construction.add(new Company("Airbus",1));
+        construction.add(new Company("Boeing",10));
+        construction.add(new Company("Lockheed Martin",3));
+        construction.add(new Company("United Technologies",6));
+        construction.add(new Company("Northrop Grumman",10));
+        construction.add(new Company("GE Aviation",7));
+        System.out.println("Most trusted company: "+ allTrustedCompanies(planes));
 
 //        boeing.AircraftConstruction();
 //        grumman.AircraftConstruction();

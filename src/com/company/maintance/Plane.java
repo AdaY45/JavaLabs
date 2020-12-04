@@ -72,4 +72,9 @@ public abstract class Plane{
         return material.toString();
     }
 
+    @Override
+    public String toString() {
+        return "Model:  " + model + " , Manufacturer: " + manufacturer + " , Status: " + status + " , Cost: " + cost + " , Speed: " + speed + " , " + material;
+    }
+
 }

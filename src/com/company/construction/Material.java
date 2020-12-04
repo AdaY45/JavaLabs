@@ -21,6 +21,6 @@ public enum Material {
 
     @Override
     public String toString() {
-        return "Material: " + title + " , ";
+        return "Material: " + title;
     }
 }

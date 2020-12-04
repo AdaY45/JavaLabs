@@ -120,13 +120,15 @@ public class Navy extends Plane{
         Predicate<Integer> isBigger = s -> s > 950;
 
         return boeings.stream()
-                .reduce(0,(p1,p2) ->{
-                            if(isBigger.test(p2.getSpeed()))
-                                return p1+p2.getSpeed();
-                            else
-                                return p1+0;
-                        },
-                        (p1,p2)->p1+p2);
+                .mapToInt(p -> p.getSpeed())
+                .sum();
+//                .reduce(0,(p1,p2) ->{
+//                            if(isBigger.test(p2.getSpeed()))
+//                                return p1+p2.getSpeed();
+//                            else
+//                                return p1+0;
+//                        },
+//                        (p1,p2)->p1+p2);
     }
 
     public static String maxSpeed (List<Navy> planes) {
@@ -137,6 +139,12 @@ public class Navy extends Plane{
     public static Double averageSpeed (List<Navy> planes) {
         return planes.stream()
                 .mapToInt(p -> p.getSpeed()).average().getAsDouble();
+    }
+
+    public static void mapOfPlanes(List<Navy> planes) {
+        Map<String,List<Navy>> map = planes.stream()
+                .collect(Collectors.groupingBy(p -> p.getMaterial()));
+        map.forEach((material,p) -> System.out.format("%s: %s\n", material,p));
     }
 
     @Override
@@ -182,6 +190,7 @@ public class Navy extends Plane{
         System.out.println("Total speed: "+ searchAndCount(planes));
         System.out.println("Model with the highest speed: "+ maxSpeed(planes));
         System.out.println("Average speed: "+ averageSpeed(planes));
+        mapOfPlanes(planes);
 
 //        boeing.AircraftConstruction();
 //        grumman.AircraftConstruction();

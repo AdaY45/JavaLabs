@@ -7,9 +7,7 @@ import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -330,7 +328,7 @@ class NavyTest {
     public void searchAndCount() {
         int expected = Navy.searchAndCount(planes);
 
-        int actual = 2880;
+        int actual = 3787;
 
         Assert.assertEquals(expected,actual);
     }
@@ -351,5 +349,21 @@ class NavyTest {
         Double actual = 1116.142857142857;
 
         Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void mapOfPlanes() {
+        Map<String,List<Navy>> expected = Navy.mapOfPlanes(planes);
+
+        int actual = 3;
+
+        Assert.assertEquals(expected.size(),actual);
+    }
+
+    @Test
+    public void allTrustedCompanies() {
+        String expected = Navy.allTrustedCompanies(planes);
+
+        Assert.assertEquals(expected,null);
     }
 }

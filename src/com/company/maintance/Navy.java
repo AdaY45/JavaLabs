@@ -142,17 +142,20 @@ public class Navy extends Plane{
                 .mapToInt(p -> p.getSpeed()).average().getAsDouble();
     }
 
-    public static void mapOfPlanes(List<Navy> planes) {
-        Map<String,List<Navy>> map = planes.stream()
+    public static Map<String,List<Navy>> mapOfPlanes(List<Navy> planes) {
+         return planes.stream()
                 .collect(Collectors.groupingBy(p -> p.getMaterial()));
-        map.forEach((material,p) -> System.out.format("%s: %s\n", material,p));
     }
 
     public static String allTrustedCompanies(List<Navy> planes) {
-        return planes.stream()
+        Optional<Company> opt = planes.stream()
                 .map(p -> p.getConstruction())
                 .flatMap(comp -> comp.stream())
-                .max(Comparator.comparingInt(Company::getTrustIndex)).get().getName();
+                .max(Comparator.comparingInt(Company::getTrustIndex));
+        if(opt.isPresent()) {
+            return opt.get().getName();
+        }
+        return null;
     }
 
     private List<Company> getConstruction() {
@@ -202,7 +205,7 @@ public class Navy extends Plane{
         System.out.println("Total speed: "+ searchAndCount(planes));
         System.out.println("Model with the highest speed: "+ maxSpeed(planes));
         System.out.println("Average speed: "+ averageSpeed(planes));
-        mapOfPlanes(planes);
+        System.out.println(mapOfPlanes(planes));
 
         construction.add(new Company("Airbus",1));
         construction.add(new Company("Boeing",10));

@@ -1,4 +1,4 @@
-package com.company.maintance;
+package com.company.mvc.domain.company;
 
 public class Company {
     String name;

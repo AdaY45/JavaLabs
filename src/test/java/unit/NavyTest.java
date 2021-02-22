@@ -1,10 +1,9 @@
 package unit;
 
-import com.company.construction.*;
-import com.company.maintance.Navy;
+import com.company.mvc.domain.construction.*;
+import com.company.mvc.domain.plane.Navy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 
 
 import java.util.*;

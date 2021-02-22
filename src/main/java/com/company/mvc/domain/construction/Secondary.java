@@ -1,4 +1,4 @@
-package com.company.construction;
+package com.company.mvc.domain.construction;
 
 public class Secondary extends FlightControlSurfaces{
     private final String trimTabs;

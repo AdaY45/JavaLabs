@@ -1,4 +1,4 @@
-package com.company.construction;
+package com.company.mvc.domain.construction;
 
 public class Primary extends FlightControlSurfaces{
     private final String ailerons;

@@ -1,6 +1,6 @@
-package com.company.maintance;
+package com.company.mvc.domain.plane;
 
-import com.company.construction.*;
+import com.company.mvc.domain.construction.*;
 
 
 public abstract class Plane{

@@ -1,4 +1,4 @@
-package com.company.construction;
+package com.company.mvc.domain.construction;
 
 public enum Material {
     ALLOY ("Alloy"),

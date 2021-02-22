@@ -1,6 +1,7 @@
-package com.company.maintance;
+package com.company.mvc.domain.plane;
 
-import com.company.construction.*;
+import com.company.mvc.domain.company.Company;
+import com.company.mvc.domain.construction.*;
 
 
 import java.util.ArrayList;
@@ -12,8 +13,6 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-
-import static org.apache.commons.lang3.ArrayUtils.*;
 
 public class Navy extends Plane{
 

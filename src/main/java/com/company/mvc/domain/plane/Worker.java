@@ -1,4 +1,4 @@
-package com.company.maintance;
+package com.company.mvc.domain.plane;
 
 public class Worker {
     private final String aeronauticalEngineer = "Mark Roseman";

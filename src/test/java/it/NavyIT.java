@@ -1,11 +1,9 @@
 package it;
 
-import com.company.construction.Material;
-import com.company.maintance.Navy;
+import com.company.mvc.domain.construction.Material;
+import com.company.mvc.domain.plane.Navy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.util.ArrayList;

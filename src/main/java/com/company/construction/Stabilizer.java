@@ -1,7 +1,5 @@
 package com.company.construction;
 
-import com.company.maintance.Plane;
-
 public class Stabilizer implements Construction{
     private String type;
     private String stability;

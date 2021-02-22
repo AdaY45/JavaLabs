@@ -2,9 +2,18 @@ package com.company.maintance;
 
 import com.company.construction.*;
 
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+
+import static org.apache.commons.lang3.ArrayUtils.*;
 
 public class Navy extends Plane{
 
@@ -79,7 +88,7 @@ public class Navy extends Plane{
         return new ArrayList<>(allPlanes.values());
     }
 
-    public static List<Navy> getAllPlanes(Material material) {
+    public List<Navy> getAllPlanes(Material material) {
         List<Navy> listAllPlanes = new ArrayList<>();
         for (Navy plane : allPlanes.values()) {
             if (plane.material == material) {
@@ -93,7 +102,7 @@ public class Navy extends Plane{
         return allPlanes.size();
     }
 
-    public static int getHowManyPlanes(Material material) {
+    public int getHowManyPlanes(Material material) {
         return getAllPlanes(material).size();
     }
 
@@ -105,7 +114,11 @@ public class Navy extends Plane{
         return count;
     }
 
-    public static  int getAllSpeedPlanes(Material material) {
+    private List<Company> getConstruction() {
+        return construction;
+    }
+
+    public int getAllSpeedPlanes(Material material) {
         int count = 0;
         for (Navy plane : getAllPlanes(material)) {
             count += plane.getSpeed();
@@ -148,18 +161,19 @@ public class Navy extends Plane{
     }
 
     public static String allTrustedCompanies(List<Navy> planes) {
-        Optional<Company> opt = planes.stream()
+        return planes.stream()
                 .map(p -> p.getConstruction())
                 .flatMap(comp -> comp.stream())
-                .max(Comparator.comparingInt(Company::getTrustIndex));
+                .max(Comparator.comparingInt(Company::getTrustIndex))
+                .map(Company::getName)
+                .orElseThrow(() -> new RuntimeException());
+    }
+
+    public static Object checkIfPresent(Optional<Company> opt) {
         if(opt.isPresent()) {
             return opt.get().getName();
         }
         return null;
-    }
-
-    private List<Company> getConstruction() {
-        return construction;
     }
 
     @Override

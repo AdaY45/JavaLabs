@@ -2,9 +2,6 @@ package com.company.maintance;
 
 import com.company.construction.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public abstract class Plane{
     private String model;

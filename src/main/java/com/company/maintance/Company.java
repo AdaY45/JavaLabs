@@ -1,7 +1,5 @@
 package com.company.maintance;
 
-import com.company.construction.*;
-
 public class Company {
     String name;
     int trustIndex;

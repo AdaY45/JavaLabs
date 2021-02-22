@@ -1,8 +1,6 @@
 package com.company.maintance;
 
-import com.company.PlaneBuilding;
-
-public class Worker extends PlaneBuilding {
+public class Worker {
     private final String aeronauticalEngineer = "Mark Roseman";
     private final String mechanicalEngineer = "Calvin Hibs";
     private final String draftingEngineer = "Kevin Baker";

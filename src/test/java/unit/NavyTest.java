@@ -1,7 +1,7 @@
 package unit;
 
-import com.company.mvc.domain.construction.*;
-import com.company.mvc.domain.plane.Navy;
+import com.plane.pojo.construction.*;
+import com.plane.pojo.plane.Navy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package com.company.mvc.domain.company;
+package com.plane.pojo.plane;
 
 public class Company {
     String name;

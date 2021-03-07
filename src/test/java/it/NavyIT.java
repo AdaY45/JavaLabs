@@ -1,7 +1,7 @@
 package it;
 
-import com.company.mvc.domain.construction.Material;
-import com.company.mvc.domain.plane.Navy;
+import com.plane.pojo.construction.Material;
+import com.plane.pojo.plane.Navy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

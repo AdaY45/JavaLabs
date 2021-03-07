@@ -1,4 +1,4 @@
-package com.company.mvc.domain.construction;
+package com.plane.pojo.construction;
 
 public interface Construction {
     public String construction();

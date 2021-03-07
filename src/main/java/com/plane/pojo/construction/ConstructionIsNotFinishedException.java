@@ -1,4 +1,4 @@
-package com.company.mvc.domain.construction;
+package com.plane.pojo.construction;
 
 public class ConstructionIsNotFinishedException extends RuntimeException{
 

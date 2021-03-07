@@ -1,6 +1,6 @@
-package com.company.mvc.domain.plane;
+package com.plane.pojo.plane;
 
-import com.company.mvc.domain.construction.*;
+import com.plane.pojo.construction.*;
 
 
 public abstract class Plane{

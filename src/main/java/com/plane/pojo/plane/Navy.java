@@ -20,7 +20,7 @@ public class Navy extends Plane{
     public static List<Company> construction = new ArrayList<>();
     private static int countId = 0;
 
-    public Navy(String model, String manufacturer, String status, String cost, Material material,int speed) {
+    public Navy(Integer id, String model, String manufacturer, String status, String cost, Material material,int speed) {
         super(model,manufacturer,status,cost,material,speed);
 
         if (!hasPlane()) {
@@ -205,13 +205,13 @@ public class Navy extends Plane{
 
 
         List<Navy> planes = new ArrayList<>();
-        planes.add(new Navy("F/A-18E/F Super Hornet", "McDonnell Douglas", "In service", "US$66.0 million", Material.ALLOY, 1915));
-        planes.add(new Navy("E-2 Hawkeye","Northrop Grumman", "In service", "US$176 million", Material.ALUMINUM, 650));
-        planes.add(new Navy("E-6 Mercury","Boeing", "In service", "US$141.7 million",Material.ALLOY, 980));
-        planes.add(new Navy("EP-3","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 700));
-        planes.add(new Navy("EA-18G Growler","Boeing", "In service", "US$68.2 million",Material.ALLOY, 1900));
-        planes.add(new Navy("P-3 Orion","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 761));
-        planes.add(new Navy("P-8 Poseidon","Boeing", "In service", "US$256.5 million",Material.ALLOY, 907));
+        planes.add(new Navy(1,"F/A-18E/F Super Hornet", "McDonnell Douglas", "In service", "US$66.0 million", Material.ALLOY, 1915));
+        planes.add(new Navy(2,"E-2 Hawkeye","Northrop Grumman", "In service", "US$176 million", Material.ALUMINUM, 650));
+        planes.add(new Navy(3,"E-6 Mercury","Boeing", "In service", "US$141.7 million",Material.ALLOY, 980));
+        planes.add(new Navy(4,"EP-3","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 700));
+        planes.add(new Navy(5,"EA-18G Growler","Boeing", "In service", "US$68.2 million",Material.ALLOY, 1900));
+        planes.add(new Navy(6,"P-3 Orion","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 761));
+        planes.add(new Navy(7,"P-8 Poseidon","Boeing", "In service", "US$256.5 million",Material.ALLOY, 907));
 
 
         System.out.println("Total speed: "+ searchAndCount(planes));

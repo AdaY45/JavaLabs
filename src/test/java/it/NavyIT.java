@@ -26,20 +26,20 @@ class NavyIT {
     @BeforeEach
     public void setUp() throws Exception {
         plane = org.mockito.Mockito.mock(Navy.class);
-        boeing = new Navy("F/A-18E/F Super Hornet", "McDonnell Douglas", "In service", "US$66.0 million", Material.ALLOY, 1915);
-        grumman = new Navy("E-2 Hawkeye","Northrop Grumman", "In service", "US$176 million", Material.ALUMINUM, 650);
-        boeing2 = new Navy("E-6 Mercury","Boeing", "In service", "US$141.7 million",Material.ALLOY, 980);
-        lockheed = new Navy("EP-3","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 700);
-        boeing3 = new Navy("EA-18G Growler","Boeing", "In service", "US$68.2 million",Material.ALLOY, 1900);
-        lockheed1 = new Navy("P-3 Orion","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 761);
-        boeing4 = new Navy("P-8 Poseidon","Boeing", "In service", "US$256.5 million",Material.ALLOY, 907);
-        planes.add(new Navy("F/A-18E/F Super Hornet", "McDonnell Douglas", "In service", "US$66.0 million", Material.ALLOY, 1915));
-        planes.add(new Navy("E-2 Hawkeye","Northrop Grumman", "In service", "US$176 million", Material.ALUMINUM, 650));
-        planes.add(new Navy("E-6 Mercury","Boeing", "In service", "US$141.7 million",Material.ALLOY, 980));
-        planes.add(new Navy("EP-3","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 700));
-        planes.add(new Navy("EA-18G Growler","Boeing", "In service", "US$68.2 million",Material.ALLOY, 1900));
-        planes.add(new Navy("P-3 Orion","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 761));
-        planes.add(new Navy("P-8 Poseidon","Boeing", "In service", "US$256.5 million",Material.ALLOY, 907));
+        boeing = new Navy(1,"F/A-18E/F Super Hornet", "McDonnell Douglas", "In service", "US$66.0 million", Material.ALLOY, 1915);
+        grumman = new Navy(2,"E-2 Hawkeye","Northrop Grumman", "In service", "US$176 million", Material.ALUMINUM, 650);
+        boeing2 = new Navy(3,"E-6 Mercury","Boeing", "In service", "US$141.7 million",Material.ALLOY, 980);
+        lockheed = new Navy(4,"EP-3","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 700);
+        boeing3 = new Navy(5,"EA-18G Growler","Boeing", "In service", "US$68.2 million",Material.ALLOY, 1900);
+        lockheed1 = new Navy(6,"P-3 Orion","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 761);
+        boeing4 = new Navy(7,"P-8 Poseidon","Boeing", "In service", "US$256.5 million",Material.ALLOY, 907);
+        planes.add(new Navy(8,"F/A-18E/F Super Hornet", "McDonnell Douglas", "In service", "US$66.0 million", Material.ALLOY, 1915));
+        planes.add(new Navy(9,"E-2 Hawkeye","Northrop Grumman", "In service", "US$176 million", Material.ALUMINUM, 650));
+        planes.add(new Navy(10,"E-6 Mercury","Boeing", "In service", "US$141.7 million",Material.ALLOY, 980));
+        planes.add(new Navy(11,"EP-3","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 700));
+        planes.add(new Navy(12,"EA-18G Growler","Boeing", "In service", "US$68.2 million",Material.ALLOY, 1900));
+        planes.add(new Navy(13,"P-3 Orion","Lockheed Corporation", "Active", "US$36 million",Material.TITANIUM, 761));
+        planes.add(new Navy(14,"P-8 Poseidon","Boeing", "In service", "US$256.5 million",Material.ALLOY, 907));
     }
 
     @Test

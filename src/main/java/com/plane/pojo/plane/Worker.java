@@ -19,6 +19,9 @@ public class Worker {
         this.position = position;
     }
 
+    public void addPlane(Navy plane) {
+    }
+
 //    private final String aeronauticalEngineer = "Mark Roseman";
 //    private final String mechanicalEngineer = "Calvin Hibs";
 //    private final String draftingEngineer = "Kevin Baker";

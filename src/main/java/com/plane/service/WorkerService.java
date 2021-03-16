@@ -1,8 +1,7 @@
 package com.plane.service;
 
-import com.plane.pojo.plane.Worker;
+import com.plane.pojo.people.Worker;
 
-import java.util.Collections;
 import java.util.List;
 
 public interface WorkerService {

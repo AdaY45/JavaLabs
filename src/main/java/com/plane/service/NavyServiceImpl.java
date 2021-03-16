@@ -1,8 +1,7 @@
 package com.plane.service;
 
-import com.plane.pojo.plane.Construction;
 import com.plane.pojo.plane.Navy;
-import com.plane.pojo.plane.Worker;
+import com.plane.pojo.people.Worker;
 import com.plane.repository.NavyRepository;
 import com.plane.repository.WorkerRepository;
 

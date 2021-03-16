@@ -1,4 +1,6 @@
-package com.plane.pojo.plane;
+package com.plane.pojo.people;
+
+import com.plane.pojo.plane.Navy;
 
 public class Worker {
     private int id;

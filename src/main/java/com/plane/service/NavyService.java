@@ -1,7 +1,7 @@
 package com.plane.service;
 
 import com.plane.pojo.plane.Navy;
-import com.plane.pojo.plane.Worker;
+import com.plane.pojo.people.Worker;
 
 import java.util.List;
 

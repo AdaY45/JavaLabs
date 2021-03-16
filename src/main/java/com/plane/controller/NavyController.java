@@ -2,7 +2,7 @@ package com.plane.controller;
 
 import com.plane.exception.WorkerNotFoundException;
 import com.plane.pojo.plane.Navy;
-import com.plane.pojo.plane.Worker;
+import com.plane.pojo.people.Worker;
 import com.plane.service.NavyServiceImpl;
 import com.plane.service.WorkerServiceImpl;
 import org.springframework.stereotype.Controller;

@@ -1,9 +1,7 @@
 package com.plane.repository;
 
 
-import com.plane.pojo.plane.Construction;
 import com.plane.pojo.plane.Navy;
-import com.plane.pojo.plane.Worker;
 import org.apache.commons.lang3.NotImplementedException;
 
 //CRUD

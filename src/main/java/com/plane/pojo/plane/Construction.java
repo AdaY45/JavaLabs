@@ -1,5 +1,7 @@
 package com.plane.pojo.plane;
 
+import com.plane.pojo.people.Worker;
+
 public class Construction {
     private String name;
     Worker worker;

@@ -252,4 +252,8 @@ public class Navy extends Plane{
 //            System.out.println(iter.next());
 //        }
     }
+
+    public int getId() {
+        return id;
+    }
 }

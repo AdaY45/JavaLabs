@@ -75,4 +75,6 @@ public abstract class Plane{
     public String toString() {
         return "Model:  " + model + " , Manufacturer: " + manufacturer + " , Status: " + status + " , Cost: " + cost + " , Speed: " + speed + " , " + material;
     }
+
+    public abstract void savePlane(PlanePart planePart);
 }

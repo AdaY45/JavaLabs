@@ -1,6 +1,7 @@
 package com.plane.service;
 
 import com.plane.pojo.people.Worker;
+import com.plane.pojo.plane.PlanePart;
 import com.plane.repository.WorkerRepository;
 
 import java.util.Collections;
@@ -20,7 +21,7 @@ public class WorkerServiceImpl implements WorkerService{
     }
 
     @Override
-    public List<Worker> getAllWorkers() {
+    public List<Worker> getAllWorkers(PlanePart planePart) {
         return Collections.emptyList();
     }
 

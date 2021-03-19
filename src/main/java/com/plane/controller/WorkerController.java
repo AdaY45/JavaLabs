@@ -2,6 +2,8 @@ package com.plane.controller;
 
 import com.plane.exception.WorkerNotFoundException;
 import com.plane.pojo.people.Worker;
+import com.plane.pojo.plane.Plane;
+import com.plane.pojo.plane.PlanePart;
 import com.plane.service.WorkerServiceImpl;
 import org.springframework.stereotype.Controller;
 
@@ -23,8 +25,8 @@ public class WorkerController {
         return worker;
     }
 
-    public List<Worker> getAllWorkers() {
-        return workerService.getAllWorkers();
+    public List<Worker> getAllWorkers(PlanePart planePart) {
+        return workerService.getAllWorkers(planePart);
     }
 
     public void updateWorker(Worker worker) {

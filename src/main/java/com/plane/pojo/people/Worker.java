@@ -24,6 +24,11 @@ public class Worker {
     public void addPlane(Navy plane) {
     }
 
+    public int getId() {
+        return id;
+    }
+
+
 //    private final String aeronauticalEngineer = "Mark Roseman";
 //    private final String mechanicalEngineer = "Calvin Hibs";
 //    private final String draftingEngineer = "Kevin Baker";

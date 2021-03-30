@@ -6,3 +6,5 @@
 *.ear
 
 .idea
+
+src/main/java/production/pojo/construction

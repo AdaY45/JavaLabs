@@ -21,7 +21,6 @@ public class CompanyView extends VerticalLayout {
     private final HorizontalLayout horizontalLayout = new HorizontalLayout(filter, addNewBtn);
     final Grid<Company> grid;
 
-
     public CompanyView(CompanyController companyController) {
         this.companyController = companyController;
         this.grid = new Grid<>(Company.class);

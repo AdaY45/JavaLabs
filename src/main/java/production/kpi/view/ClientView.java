@@ -22,7 +22,6 @@ public class ClientView extends VerticalLayout {
     private final HorizontalLayout horizontalLayout = new HorizontalLayout(filter, addNewBtn);
     final Grid<Client> grid;
 
-
     public ClientView(ClientController clientController) {
         this.clientController = clientController;
         this.grid = new Grid<>(Client.class);
@@ -31,7 +30,6 @@ public class ClientView extends VerticalLayout {
         grid.setHeight("300px");
         grid.setColumns("id", "firstName", "lastName", "email");
         grid.getColumnByKey("id").setWidth("50px").setFlexGrow(0);
-
         filter.setValueChangeMode(ValueChangeMode.EAGER);
         filter.addValueChangeListener(e -> showClients(e.getValue()));
         addNewBtn.addClickListener(e -> {

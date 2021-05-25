@@ -20,7 +20,6 @@ public class WorkerView extends VerticalLayout {
     private final HorizontalLayout horizontalLayout = new HorizontalLayout(filter, addNewBtn);
     final Grid<Worker> grid;
 
-
     public WorkerView(WorkerController workerController) {
         this.workerController = workerController;
         this.grid = new Grid<>(Worker.class);
